@@ -136,11 +136,19 @@ ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
 
 5 
  <div class="well">
- <h4>Side Widget Well</h4>
- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci
-accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+ <h4>Recent Posts</h4>
+ <% @articles.each do |f| %>
+ <strong><%= link_to f.title, f %></strong>
+ <p><%= truncate(f.body) %></p>
+ 
+ <% end %>
+ 
+  
+  
+  
  </div>
  </div>
+ 
 </div>
 <!-- /.row -->
 <hr>
