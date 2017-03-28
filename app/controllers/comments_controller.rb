@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   
   def update 
     @article = Article.find(params[:article_id])
-    @comment = Article.comments.find(params[:id])
+    @comment = @article.comments.find(params[:id])
     
     if @comment.update(params[:comment].permit(:body))
       redirect_to article_path(@article), notice: "Your comment has been updated."
